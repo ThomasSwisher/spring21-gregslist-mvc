@@ -7,11 +7,11 @@ class HousesService {
     async getHouses() {
         let res = await api.get('Houses')
 
-        // REVIEW ==========================
-        //console.log(res.data)
+        // NOTE =====  console.log(res.data) ==================
+
         ProxyState.houses = res.data.map(c => new House(c))
     }
-    // NOTE Post!!
+    // NOTE Post========
     async createHouse(newHouse) {
         // NOTE post creates data in the server, the first argument to extend the url the second is the data to send
         let res = await api.post('houses', newHouse)
