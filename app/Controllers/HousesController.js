@@ -18,8 +18,8 @@ export default class HousesController {
     constructor() {
         ProxyState.on('houses', _draw);
 
-        // REVIEW ============================
-        // GET HOUSES ON LOAD
+        // REVIEW this all needs to be spun up to console.log() api info ====================
+        // NOTE this loads (houses, cars, pokemon, whatever at) on start.
         this.getHouses()
     }
 

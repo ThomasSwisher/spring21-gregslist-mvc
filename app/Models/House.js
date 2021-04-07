@@ -1,4 +1,5 @@
 export default class House {
+    // NOTE with apis have to use objecdt deconstruction with constructor ({name, price, etc})
     constructor({ price, bedrooms, bathrooms, levels, year, description, imgUrl, id }) {
         // NOTE it is no longer our job to generate Id's
         this.price = price
