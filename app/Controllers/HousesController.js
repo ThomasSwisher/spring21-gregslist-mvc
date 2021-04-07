@@ -1,15 +1,14 @@
 import { ProxyState } from "../AppState.js";
 import { housesService } from "../Services/housesService.js";
 
-
-//Private
+//REVIEW ===========================================
+//Private _inderscoreMakesItSo
 function _draw() {
     let houses = ProxyState.houses
     let template = ''
     houses.forEach(house => {
         template += house.Template
     })
-    //REVIEW ===========================================
     document.getElementById('houses').innerHTML = template
 }
 // =====================================================
@@ -24,8 +23,8 @@ export default class HousesController {
         this.getHouses()
     }
 
-    // REVIEW ==========  Question do we use try/await/catch on ALL "asyn"
     async getHouses() {
+        // NOTE ============= ALWAYS WRAP async/await calls with try/catch/error trackers.
         try {
             await housesService.getHouses()
         } catch (error) {
@@ -35,9 +34,8 @@ export default class HousesController {
     // NOTE the try/catch/error setup ==========================
     async createHouse() {
         try {
-            // NOTE prevent now widow from opening.
+            // NOTE prevent window from opening on form submission.
             window.event.preventDefault()
-            // REVIEW ======================= Questions Brings in the form fields "Target"?
             const form = window.event.target
             let newHouse = {
                 // @ts-ignore  "Number" this converts the string to a number
