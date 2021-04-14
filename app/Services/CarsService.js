@@ -13,7 +13,7 @@ class CarsService {
   async createCar(newCar) {
     // NOTE post creates data in the server, the first argument to extend the url the second is the data to send
     let res = await api.post('cars', newCar)
-    console.log(res.data)
+    //console.log(res.data)
 
 
     // the lazy way
